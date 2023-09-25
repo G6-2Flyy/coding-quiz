@@ -10,8 +10,8 @@
   <body>
     <div id="page-container">
       <div id="header-section">
-        <a href="#">View Highscores</a>
-        <h2>Timer: <span>00</span></h2>
+        <a href="highscore.html">View Highscores</a>
+        <h2>Timer: <span id="timer">00</span></h2>
       </div>
       <div id="main">
         <div id="intro">
@@ -23,6 +23,7 @@
           </p>
           <button id="start">Start</button>
         </div>
+
         <div id="question-container">
             <h1>What time is it?</h1>
             <div class="answers">
@@ -32,8 +33,9 @@
                 <button>4. Evening</button>
             </div>
             <hr>
-            <p>Correct!</p>
+            <p id="result">Correct!</p>
         </div>
+
         <div class="final-score">
             <h1>All done!</h1>
             <p>Your final score is: 32</p>
@@ -43,5 +45,8 @@
         </div>
       </div>
     </div>
+
+    <script src="script.js"></script>
+
   </body>
 </html>

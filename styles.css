@@ -25,7 +25,6 @@
 #intro {
     width: 600px;
     text-align: center; 
-    display: none;
 }
 
 #intro h1 {
@@ -47,6 +46,7 @@
 
 #question-container {
     width: 600px;
+    display: none;
 }
 
 #question-container h1 {
@@ -83,6 +83,21 @@ hr {
 
 #question-container p {
     font-weight: 200;
+}
 
+.final-score {
+    display: none;
+}
 
+.final-score p {
+    margin: 15px 0; 
+}
+
+.final-score button {
+    background-color: blueviolet;
+    color: white;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
