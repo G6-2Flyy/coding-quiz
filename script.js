@@ -41,6 +41,8 @@ var timerId;
 var counter = 0;
 var timer = document.querySelector("#timer")
 var correctAnswer = 0;
+const scoreInput = document.querySelector("#score")
+const scoreButton = document.querySelector("#score-button")
 
 function startTimer() {
     timerId = setInterval(function() {
@@ -59,8 +61,7 @@ function randomize(arr){
 
 function checkAnswer(selectedAnswer) {
     var result = document.querySelector("#result")
-    console.log(currentIndex);
-    if (selectedAnswer === questions[currentIndex].correctAnswer) {
+    if (selectedAnswer.split(' ')[1] === questions[currentIndex].correctAnswer) {
         correctAnswer = correctAnswer + 5
         result.innerText = "Correct!"
     } else {
@@ -74,16 +75,19 @@ function checkAnswer(selectedAnswer) {
 }
 
 var nextQuestion = (event) => {
-    if (event.target.tagName === "BUTTON") {
+    if (event.target.tagName === "BUTTON" && currentIndex < questions.length) {
+        
+        checkAnswer(event.target.innerText)
+        currentIndex++;
         if (currentIndex>=questions.length) {
             // game over
             clearInterval(timerId);
+            document.querySelector("#question-container").style.display="none"
+            document.querySelector(".final-score").style.display="block"
+            document.querySelector("#total-score").innerText = correctAnswer * counter
             return
         }
-        checkAnswer(event.target.innerText)
-        currentIndex++;
         setTimeout(function(){
-            console.log("running")
             showQuestion();
         }, 500);
         
@@ -91,7 +95,6 @@ var nextQuestion = (event) => {
 }
 
 function showQuestion() {
-    console.log(currentIndex);
     var question = questions[currentIndex]
     question.answers = randomize(question.answers)
     var content = `
@@ -107,6 +110,19 @@ function showQuestion() {
     document.querySelector("#question-container").innerHTML = content
     document.querySelector(".answers").addEventListener("click", nextQuestion)
 }
+
+    scoreButton.addEventListener("click", function(){
+        const scores = JSON.parse(localStorage.getItem("scores"))||[]
+        scores.push({
+            score:correctAnswer * counter,
+            name:scoreInput.value,
+
+
+
+        })
+        localStorage.setItem("scores", JSON.stringify(scores))
+        location.href="/highscore.html"
+    })
 
 
 
