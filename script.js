@@ -1,38 +1,38 @@
 
 var questions = [
     {
-        quiz: "Ask a question",
-        correctAnswer: "answer1",
+        quiz: "What was Prince's real-name?",
+        correctAnswer: "Prince Rodgers Nelson",
         answers: [
-            "answer1", "answer2", "answer3","answer4"
+            "Prince Rogers Nelson", "Prince Roderick Neilson", "Prince Rodgers Nailson","Prince Rogers Neelson"
         ]
     },
     {
-        quiz: "Ask a question",
-        correctAnswer: "answer1",
+        quiz: "What was the name of Prince's Recording Studio",
+        correctAnswer: "Paisley Park",
         answers: [
-            "answer1", "answer2", "answer3","answer4"
+            "Praisley Park", "Purple Park", "Paisley Park", "Passion Park"
         ]
     },
     {
-        quiz: "Ask a question",
-        correctAnswer: "answer1",
+        quiz: "Prince was raised as a ______ ? ",
+        correctAnswer: "Seventh Day Adventist",
         answers: [
-            "answer1", "answer2", "answer3","answer4"
+            "Baptist", "Seventh Day Adventist", "Jehovah's Witness", "Buddhist"
         ]
     },
     {
-        quiz: "Ask a question",
-        correctAnswer: "answer1",
+        quiz: "What was Prince's most popular song? ",
+        correctAnswer: "Purple Rain",
         answers: [
-            "answer1", "answer2", "answer3","answer4"
+            "1999", "Purple Rain", "Purple Reign", "When Doves Cry"
         ]
     },
     {
-        quiz: "Ask a question",
-        correctAnswer: "answer1",
+        quiz: "Which song did Michael Jackson want to sing as a duet with Prince? ",
+        correctAnswer: "BAD",
         answers: [
-            "answer1", "answer2", "answer3","answer4"
+            "BAD", "BEAT IT", "MAN IN THE MIRROR", "DARLING NIKKI"
         ]
     }
 ]
