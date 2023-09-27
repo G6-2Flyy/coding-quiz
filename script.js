@@ -2,7 +2,7 @@
 var questions = [
     {
         quiz: "What was Prince's real-name?",
-        correctAnswer: "Prince Rodgers Nelson",
+        correctAnswer: "Prince Rogers Nelson",
         answers: [
             "Prince Rogers Nelson", "Prince Roderick Neilson", "Prince Rodgers Nailson","Prince Rogers Neelson"
         ]
@@ -11,21 +11,21 @@ var questions = [
         quiz: "What was the name of Prince's Recording Studio",
         correctAnswer: "Paisley Park",
         answers: [
-            "Praisley Park", "Purple Park", "Paisley Park", "Passion Park"
+            "Paisley Park", "Purple Park", "Praisley Park", "Passion Park"
         ]
     },
     {
         quiz: "Prince was raised as a ______ ? ",
         correctAnswer: "Seventh Day Adventist",
         answers: [
-            "Baptist", "Seventh Day Adventist", "Jehovah's Witness", "Buddhist"
+            "Seventh Day Adventist", "Baptist", "Jehovah's Witness", "Buddhist"
         ]
     },
     {
         quiz: "What was Prince's most popular song? ",
         correctAnswer: "Purple Rain",
         answers: [
-            "1999", "Purple Rain", "Purple Reign", "When Doves Cry"
+            "Purple Rain", "1999", "Purple Reign", "When Doves Cry"
         ]
     },
     {
@@ -60,8 +60,12 @@ function randomize(arr){
 }
 
 function checkAnswer(selectedAnswer) {
+    var answerArr = selectedAnswer.split(' ')
+    answerArr.shift()
+    var response = answerArr.join(' ')
+
     var result = document.querySelector("#result")
-    if (selectedAnswer.split(' ')[1] === questions[currentIndex].correctAnswer) {
+    if (response === questions[currentIndex].correctAnswer) {
         correctAnswer = correctAnswer + 5
         result.innerText = "Correct!"
     } else {
@@ -121,7 +125,7 @@ function showQuestion() {
 
         })
         localStorage.setItem("scores", JSON.stringify(scores))
-        location.href="/highscore.html"
+        location.href="./highscore.html"
     })
 
 
